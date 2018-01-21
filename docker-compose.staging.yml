@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    build: .
+    command: /usr/bin/java -jar /root/waves.jar /root/conf/waves-mainnet.conf
+    ports:
+     - '6868:6868'
+     - '6886:6886'
+     - '6869:6869'
+    volumes:
+     - ./waves/conf:/root/conf
+     - ./waves/log:/root/waves/log
+     - ./waves/wallet:/root/waves/wallet
+     - ./waves/data:/root/waves/data
